@@ -10,22 +10,38 @@ function writePassword() {
 
 }
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+//Dom Elements
+const resultEL = document.getElementById('result')
+const lengthEl = document.getElementById('length')
+const uppercaseEl = document.getElementById('uppercase')
+const lowercaseEl = document.getElementById('lowercase')
+const numbersEl = document.getElementById('numbers')
+const symbolsEl = document.getElementById('symbols')
+const generateEl = document.getElementById('generate')
+const clipboardEl = document.getElementById('clipboard')
 
-const captials = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-const lowers = "abcdefghijklmnopqrstuvwxyz";
+
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", () => {
+  const length = lengthEl.value
+  console.log(length)
+}
+
+const captials = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+const lowers = "abcdefghijklmnopqrstuvwxyz"
 const specials = "!#$%&@*"
 const number = "123456789"
 
 // Make GeneratePassword function Prompts
 function generatePassword() {
   var Passwordlength = window.prompt("Please choose between 8 and 128 characters?");
-  var Lowercase = window.prompt("Please choose at least 1 lower case character a to z");
-  var Uppercase = window.prompt("Please choose at leat 1 uppecase characters A to Z ");  
-  var Numeric = window.prompt ("Please choose at least 1 numeric value between 1 and 9");
-  var SpecialCharcters = window.prompt("Please choose from these special characaers: !, #, $, %, &, @, *");
+  var Lowercase = window.prompt("Would you like lowercase letters, yes or no?");
+  var Uppercase = window.prompt("Would you like uppcase characters, yes or no?");  
+  var Numeric = window.prompt ("Would you like to included number from 1 and 9, yes or no");
+  var SpecialCharcters = window.prompt("Would you like special characters, yes or no");
 }
+
 
 
 var randomFunctions = {
@@ -35,8 +51,8 @@ var randomFunctions = {
   symbol: Specialcharacter
 }
 
-// DOM Elements
-const resultEl = document.getElementById("result")
+
+
 //Generate Lowercase Function
 function getRandomlower() {
   return String.fromCharCode(math.floor(math.random() * 26) + 97)
