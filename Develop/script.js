@@ -30,9 +30,13 @@ function generatePassword() {
   
   var Passwordlength = window.prompt(        
     "How many characters would you like. Please choose between 8 and 128 characters?");
+    if (isNaN(Passwordlength))
+    window.prompt ("please choose correct characters");
     // only want to pass in a number
     // check out isNAN
     console.log(Passwordlength);
+    
+
     if (Passwordlength < 8 || Passwordlength > 128)
     window.prompt ("please choose correct amount of characters")
   
